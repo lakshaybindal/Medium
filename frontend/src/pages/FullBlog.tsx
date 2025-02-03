@@ -1,12 +1,14 @@
 import axios from "axios";
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { url } from "../port";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 export default function FullBlog() {
   const [searchParams] = useSearchParams();
+  const [loading, setloading] = useState(true);
   const id = searchParams.get("id") || "";
-
+  const navigator = useNavigate();
   const [blog, setBlog] = useState<{
     title: string;
     content: string;
@@ -29,15 +31,24 @@ export default function FullBlog() {
       });
       console.log(res.data.blog);
       setBlog(res.data.blog);
+      setloading(false);
     } catch (e) {
+      alert("You are not signed in");
+      navigator("./signin");
       console.log(e);
     }
   }
 
   useEffect(() => {
     getBlog();
-  }, [id]); // Run when 'id' changes
-
+  }, [id]);
+  if (loading) {
+    return (
+      <div className="h-screen flex justify-center items-center">
+        <Spinner></Spinner>;
+      </div>
+    );
+  }
   return (
     <div className="max-w-3xl mx-auto mt-10 p-6">
       <h1 className="text-3xl font-bold text-gray-900">{blog.title}</h1>

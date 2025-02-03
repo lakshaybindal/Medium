@@ -6,6 +6,7 @@ import "./App.css";
 import Blogs from "./pages/blogs";
 import FullBlog from "./pages/FullBlog";
 import CreateBlog from "./pages/CreateBlog";
+import Me from "./components/me";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <BrowserRouter>
         <>
           <Routes>
-            <Route path="/" element={<Signup></Signup>}></Route>
+            <Route path="/" element={<Me></Me>}></Route>
+            <Route path="/signup" element={<Signup></Signup>}></Route>
             <Route path="/signin" element={<Signin></Signin>}></Route>
             <Route path="/blog" element={<FullBlog></FullBlog>}></Route>
             <Route path="/blogs" element={<Blogs></Blogs>}></Route>

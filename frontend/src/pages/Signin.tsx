@@ -22,6 +22,7 @@ export default function Signin() {
       localStorage.setItem("token", res.data.token);
       navigate("/blogs");
     } catch (e) {
+      alert("Inputs are incorrect");
       console.log(e);
     }
   }
@@ -33,7 +34,7 @@ export default function Signin() {
           heading="Sign in to your account"
           subheading="Don't have an account?"
           log="Sign Up"
-          link="/"
+          link="/signup"
         />
 
         <div className="w-3/5">

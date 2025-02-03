@@ -23,6 +23,7 @@ export default function Signup() {
       localStorage.setItem("token", res.data.token);
       navigate("/blogs");
     } catch (e) {
+      alert("Inputs are incorrect");
       console.log(e);
     }
   }

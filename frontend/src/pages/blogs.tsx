@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import BlogCard from "../components/BlogCard";
 import axios from "axios";
 import { url } from "../port";
@@ -22,6 +22,8 @@ export default function Blogs() {
       setBlogs(res.data.blogs);
       setloading(false);
     } catch (e) {
+      alert("You are not signed in");
+      navigator("/signin");
       console.log(e);
     }
   }

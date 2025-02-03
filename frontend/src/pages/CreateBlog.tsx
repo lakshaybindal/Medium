@@ -19,6 +19,9 @@ export default function CreateBlog() {
       });
       setName(res.data.name);
     } catch (e) {
+      navigator("/signin");
+      alert("You are not signed in");
+
       console.log(e);
     }
   }
