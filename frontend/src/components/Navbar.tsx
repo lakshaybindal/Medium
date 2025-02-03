@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function Navbar(props: { name: string; onclick: () => void }) {
   return (

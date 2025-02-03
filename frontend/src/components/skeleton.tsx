@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function BlogSkeleton() {
   return (
     <div className="max-w-4xl mx-auto p-6 animate-pulse">
