@@ -5,7 +5,7 @@ import Signin from "./pages/Signin";
 
 import "./App.css";
 import Blogs from "./pages/blogs";
-import FullBlog from "./pages/fullblog";
+import FullBlog from "./pages/FullBlog";
 import CreateBlog from "./pages/CreateBlog";
 
 function App() {
